@@ -1,0 +1,16 @@
+
+<div class="bg-white p-10 border rounded">
+  <div id="calendar" class="tab-panel m-4 active">
+    <div class="row">
+      <div class="col-8">
+        <h2 class="mb-4">Schedule for this month</h2>
+      </div>
+      <div class="col-4">
+        <%= link_to "Schedule a new session", new_meeting_path, class: "btn btn-success", style: 'float: right'%>
+      </div>
+  </div>
+    <div id="meeting-calendar">
+      <%= render "calendar", meetings: meetings %>
+    </div>
+  </div>
+</div>

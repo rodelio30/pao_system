@@ -1,0 +1,24 @@
+
+<div class="m-4">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <% if current_user && current_user.admin %>
+      <th scope="col">Edit</th>
+      <% end %>
+      <th scope="col">Back</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @lawyer.name %></td>
+      <td><%= @lawyer.user.username %></td>
+      <% if current_user && current_user.admin %>
+      <td><%= link_to 'Edit', edit_lawyer_path(@lawyer) %></td>
+      <% end %>
+      <td><%= link_to 'Back', lawyers_path %></td>
+    </tr>
+  </tbody>
+</table>
